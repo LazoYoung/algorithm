@@ -76,7 +76,7 @@ public class ArrayFrequency extends Problem<List<Integer>, Integer> {
     }
 
     @Override
-    protected List<Integer> getInput(int id) {
+    protected List<Integer> getBatchInput() {
         int size = 10000;
         var list = new ArrayList<Integer>();
 
