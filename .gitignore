@@ -1,0 +1,6 @@
+## Binary ##
+/out
+
+## IntelliJ ##
+/.idea
+*.iml
