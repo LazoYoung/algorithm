@@ -1,7 +1,5 @@
 package common;
 
-import java.util.function.Consumer;
-
 public class Result<T> {
     private final long elapsedTime;
     private final T output;

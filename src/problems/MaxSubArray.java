@@ -3,8 +3,6 @@ package problems;
 import common.Algorithm;
 import common.Problem;
 
-import java.lang.reflect.Array;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
