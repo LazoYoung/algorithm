@@ -14,6 +14,10 @@ public abstract class Problem<I, O> {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void execute() {
         System.out.printf("[%s]\n", name);
         I input = getBatchInput();
@@ -28,8 +32,8 @@ public abstract class Problem<I, O> {
 
             System.out.printf("#%d %s%n", id, algNames.get(id));
 
-            if (getBatchInput(id) != null) {
-                input = getBatchInput(id);
+            if (getInput(id) != null) {
+                input = getInput(id);
                 printInput(input);
             }
 
@@ -42,8 +46,10 @@ public abstract class Problem<I, O> {
                 System.out.printf("   Elapsed time: %.1f ms%n", elapsedTime / Math.pow(10, 6));
             } catch (StackOverflowError e) {
                 System.out.println("   Error: Stack overflow");
+                e.printStackTrace();
             } catch (Exception e) {
                 System.out.printf("   Error: %s%n", e.getMessage());
+                e.printStackTrace();
             }
         }
         System.out.println();
@@ -53,7 +59,7 @@ public abstract class Problem<I, O> {
         return null;
     }
 
-    protected I getBatchInput(int id) {
+    protected I getInput(int id) {
         return null;
     }
 

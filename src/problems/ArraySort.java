@@ -57,7 +57,7 @@ public class ArraySort extends Problem<List<Integer>, List<Integer>> {
     }
 
     @Override
-    protected List<Integer> getBatchInput(int id) {
+    protected List<Integer> getInput(int id) {
         int size = 10000;
         var list = new ArrayList<Integer>(size);
 

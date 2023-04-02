@@ -59,7 +59,7 @@ public class MaxSubArray extends Problem<Object, Integer> {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
 
-        System.out.println("Size of int array: ");
+        System.out.println("Size of input: ");
         int size = scanner.nextInt();
         int[] arr = new int[size];
 
