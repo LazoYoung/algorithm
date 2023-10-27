@@ -46,10 +46,10 @@ public abstract class Problem<I, O> {
                 System.out.printf("   Elapsed time: %.1f ms%n", elapsedTime / Math.pow(10, 6));
             } catch (StackOverflowError e) {
                 System.out.println("   Error: Stack overflow");
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             } catch (Exception e) {
                 System.out.printf("   Error: %s%n", e.getMessage());
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
         System.out.println();
