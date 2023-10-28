@@ -32,17 +32,18 @@ public class BJ1260 {
         }
     }
 
-    static class Node implements Comparable<Node> {
+    static class Node {
         int id;
         boolean reversed;
         boolean visited;
         Queue<Node> adjNode;
 
         Node(int id, boolean reversed) {
+            Comparator<Node> comp = Comparator.comparingInt(Node::getId);
             this.id = id;
             this.reversed = reversed;
             this.visited = false;
-            this.adjNode = new PriorityQueue<>();
+            this.adjNode = new PriorityQueue<>(reversed ? comp.reversed() : comp);
         }
 
         int getId() {
@@ -72,11 +73,6 @@ public class BJ1260 {
 
         boolean isVisited() {
             return this.visited;
-        }
-
-        @Override
-        public int compareTo(Node other) {
-            return reversed ? other.id - this.id : this.id - other.id;
         }
     }
 
