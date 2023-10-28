@@ -56,18 +56,21 @@ public class MaxSubArray extends Problem<Object, Integer> {
 
     @Override
     protected Object getBatchInput() {
-        Scanner scanner = new Scanner(System.in);
-        Random rand = new Random();
+        try (Scanner scanner = new Scanner(System.in)) {
+            Random rand = new Random();
+            System.out.println("Size of input: ");
+            int size = scanner.nextInt();
+            int[] arr = new int[size];
 
-        System.out.println("Size of input: ");
-        int size = scanner.nextInt();
-        int[] arr = new int[size];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = rand.nextInt(-9, 10);
+            }
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(-9, 10);
+            return arr;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        return arr;
+        return null;
     }
 
     // Stackoverflow at arr.length > 7000
